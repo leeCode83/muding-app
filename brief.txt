@@ -1,0 +1,114 @@
+
+### **[Halaman Utama / Hero Section]**
+
+**Judul Utama:** Buka Nilai Sebenarnya dari Musik Anda.
+**Sub-Judul:** MuDING adalah platform pinjaman P2P yang memungkinkan Anda mengubah *Master Recording Rights* menjadi jaminan untuk mendapatkan dana instan, tanpa menjual kepemilikan Anda.
+**Tombol Aksi (CTA):** "Mulai Verifikasi Aset Anda" (Untuk Artis) | "Jelajahi Marketplace" (Untuk Lender)
+
+---
+
+### **Apa Itu MuDING?**
+
+**Judul:** MuDING: Jembatan Antara Musik dan Keuangan Terdesentralisasi
+
+MuDING (Music Lending) adalah sebuah protokol pinjaman *peer-to-peer* (P2P) revolusioner yang dibangun di atas teknologi blockchain. Kami memecahkan salah satu masalah terbesar bagi para musisi dan pemegang hak cipta: **aset yang tidak likuid**.
+
+Aset paling berharga Anda—*master recording rights*—menghasilkan pendapatan, tetapi tidak dapat dengan mudah digunakan untuk mendapatkan dana tunai. MuDING mengubah ini.
+
+Kami memungkinkan Anda untuk:
+1.  **Mentokenisasi** sebagian hak pendapatan dari *master recording* Anda menjadi *Non-Fungible Token* (NFT) yang unik.
+2.  **Menjaminkan** NFT tersebut di marketplace global kami.
+3.  **Mendapatkan** pinjaman (dalam stablecoin) secara cepat dan transparan langsung dari jaringan pemberi pinjaman (lender).
+
+Intinya, MuDING memberikan Anda kekuatan finansial atas karya Anda, memungkinkan Anda mendanai proyek berikutnya, tur, atau apa pun yang Anda butuhkan, sambil tetap memegang kontrol penuh atas musik Anda.
+
+---
+
+### **Bagaimana Proses Kerjanya?**
+
+**Judul:** Proses Kami: Terverifikasi di Dunia Nyata, Otomatis di Blockchain
+
+Keamanan dan kepercayaan adalah fondasi kami. Kami menggabungkan uji tuntas (*due diligence*) yang ketat di dunia nyata dengan otomatisasi *smart contract* yang tidak bisa dimanipulasi.
+
+1.  **Verifikasi & Tokenisasi (Off-Chain)**
+    * **Pengajuan:** Artis mengajukan aset (*master rights*) beserta bukti kepemilikan yang sah dan laporan pendapatan historis (minimal 2 tahun).
+    * **Uji Tuntas:** Tim legal dan analis kami memverifikasi setiap dokumen untuk memastikan keabsahan dan kinerja pendapatan.
+    * **Perjanjian Hukum:** Artis menandatangani perjanjian yang mengikat, termasuk **"Perjanjian Pengalihan Royalti"** yang menginstruksikan distributor (misal: Spotify, TuneCore) untuk mengirimkan 100% pendapatan lagu ke rekening MuDING.
+    * **Pencetakan NFT:** Setelah disetujui, MuDING mencetak NFT unik yang mewakili persentase hak pendapatan tersebut (misal: 25% dari lagu "XYZ").
+
+2.  **Proses Pinjaman P2P (On-Chain)**
+    * **Pendaftaran Aset:** Artis mendaftarkan NFT mereka di marketplace MuDING untuk dilelang pinjamannya.
+    * **Penawaran:** Pemberi pinjaman (Lender) dari seluruh dunia dapat melihat data pendapatan aset dan mengajukan penawaran pinjaman (jumlah, bunga, durasi).
+    * **Eksekusi Pinjaman:** Artis menerima penawaran terbaik. Dana pinjaman (stablecoin) langsung dikirim ke dompet artis, dan NFT secara otomatis dikunci di dalam *smart contract escrow* yang aman.
+
+3.  **Distribusi & Penyelesaian (Otomatis)**
+    * **Jembatan Royalti:** Pendapatan royalti (dalam Dolar/Rupiah) masuk ke rekening MuDING. Kami mengonversinya menjadi stablecoin dan menyetorkannya ke *smart contract* distribusi.
+    * **Pembagian Otomatis:** *Smart contract* secara instan membagi stablecoin tersebut dan mengirimkannya ke dompet pemegang NFT dan artis sesuai persentase yang ditetapkan.
+    * **Penyelesaian:**
+        * **Lunas:** Artis melunasi pinjaman. NFT secara otomatis dikembalikan ke dompet artis.
+        * **Gagal Bayar:** Jika pinjaman gagal dilunasi tepat waktu, NFT secara otomatis ditransfer ke dompet *Lender*. *Lender* kini menjadi pemilik baru atas hak pendapatan tersebut.
+
+---
+
+### **Keunggulan MuDING**
+
+**Judul:** Mengapa Memilih MuDING?
+
+Kami dirancang untuk memberikan keuntungan bagi semua pihak dalam ekosistem musik.
+
+**Bagi Musisi & Pemegang Hak (Peminjam):**
+* **Likuiditas Tanpa Menjual:** Dapatkan dana tunai yang Anda butuhkan tanpa harus menjual aset *master rights* Anda selamanya.
+* **Pertahankan Kontrol:** Anda tetap memegang kendali kreatif penuh. Kami hanya memfasilitasi pinjaman, bukan mengambil alih karier Anda.
+* **Akses Global:** Dapatkan pendanaan dari jaringan pemberi pinjaman global, bukan hanya terbatas pada label atau bank lokal.
+* **Cepat & Transparan:** Proses pinjaman berbasis *smart contract* jauh lebih cepat dan adil daripada negosiasi berbulan-bulan dengan sistem tradisional.
+
+**Bagi Pemberi Pinjaman (Lender):**
+* **Kelas Aset Baru:** Dapatkan akses ke kelas aset yang sebelumnya eksklusif (royalti musik) yang tidak berkorelasi dengan pasar finansial tradisional.
+* **Jaminan Terverifikasi:** Setiap pinjaman dijamin oleh aset yang telah melalui uji tuntas ketat, dengan data pendapatan historis yang transparan.
+* **Pendapatan Pasif yang Aman:** Dapatkan bunga pinjaman yang kompetitif. Jika terjadi gagal bayar, Anda akan menerima aset (NFT) yang terus menghasilkan pendapatan royalti.
+* **Dukung Kreator:** Berpartisipasi langsung dalam kesuksesan musisi dan ekonomi kreator.
+
+---
+
+### **Fitur Utama Platform**
+
+* **Marketplace Pinjaman P2P:** Antarmuka yang bersih dan intuitif untuk mendaftarkan NFT, melihat penawaran pinjaman, dan mengelola portofolio Anda.
+* **Sistem Verifikasi Aset (KYA):** Proses *Know Your Asset* (KYA) kami yang ketat memastikan setiap NFT di platform didukung oleh aset dunia nyata yang sah dan bernilai.
+* **Jembatan Royalti Otomatis:** Mekanisme inti kami yang secara aman dan transparan mengonversi pendapatan fiat (Dolar/Rupiah) menjadi stablecoin dan mendistribusikannya secara *on-chain*.
+* **Escrow Smart Contract:** Jaminan NFT disimpan dalam *smart contract* yang telah diaudit, memastikan pelepasan aset yang adil dan otomatis (baik saat lunas maupun gagal bayar) tanpa campur tangan manual.
+* **Dasbor Analitik Aset:** Tampilan data transparan untuk setiap aset, menunjukkan historis pendapatan, performa streaming, dan metrik kunci lainnya untuk membantu *lender* mengambil keputusan.
+
+---
+
+### **[Informasi Tambahan untuk Landing Page]**
+
+#### **Bagian 1: Perbandingan (MuDING vs. Tradisional)**
+
+| Fitur | **MuDING** | **Label Rekaman** | **Bank** |
+| :--- | :--- | :--- | :--- |
+| **Kepemilikan Aset** | **Artis Tetap Memiliki** | Seringkali Diambil Alih | Tidak Relevan |
+| **Kontrol Kreatif** | **100% Milik Artis** | Sering Hilang / Dibatasi | 100% Milik Artis |
+| **Kecepatan Dana** | **Cepat (Hari/Jam)** | Lambat (Bulan) | Sangat Lambat (Bulan) |
+| **Proses** | Transparan & Otomatis | Tertutup & Rumit | Birokratis & Rumit |
+| **Akses** | Global, 24/7 | Sangat Terbatas | Terbatas Lokal |
+
+#### **Bagian 2: Panggilan Aksi (CTA) Sekunder**
+
+**Untuk Musisi:**
+"Karya Anda memiliki nilai. Jangan biarkan terkunci. Mulailah proses verifikasi aset Anda hari ini dan dapatkan pendanaan yang pantas Anda dapatkan."
+**[Tombol: Pelajari Kriteria Verifikasi]**
+
+**Untuk Pemberi Pinjaman:**
+"Jadilah bagian dari revolusi keuangan musik. Diversifikasikan portofolio Anda dengan aset yang didukung pendapatan riil dan dukung kreator berbakat."
+**[Tombol: Lihat Aset yang Tersedia]**
+
+#### **Bagian 3: Pertanyaan Umum (FAQ)**
+
+* **Apa yang terjadi jika saya gagal bayar?**
+    * Jika pinjaman tidak dapat dilunasi pada tanggal jatuh tempo, *smart contract escrow* akan secara otomatis mentransfer kepemilikan NFT Anda ke *lender*. Ini adalah proses akhir. *Lender* kemudian akan memiliki hak atas persentase pendapatan royalti dari lagu tersebut.
+* **Bagaimana MuDING memastikan pendapatan royalti benar-benar dibagikan?**
+    * Melalui perjanjian hukum yang mengikat di awal, 100% pendapatan dari distributor dialihkan ke kami. Kami kemudian menggunakan *smart contract* untuk membagikannya secara otomatis. Artis tidak pernah memegang 100% pendapatan di awal, sehingga menghilangkan risiko penipuan.
+* **Apakah saya harus mentokenisasi 100% lagu saya?**
+    * Tidak. Anda memiliki fleksibilitas penuh. Anda bisa memutuskan untuk mentokenisasi hanya 10%, 25%, atau persentase lain dari pendapatan lagu Anda, sesuai dengan kebutuhan pendanaan Anda.
+* **Apakah ini aman?**
+    * Keamanan kami berlapis. Kami menggunakan perjanjian hukum di dunia nyata untuk mengamankan aliran pendapatan, dan *smart contract* yang telah diaudit secara profesional di blockchain untuk mengotomatisasi pinjaman dan distribusi, menghilangkan risiko kesalahan manusia atau manipulasi.
