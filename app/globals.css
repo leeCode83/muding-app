@@ -149,14 +149,14 @@ a {
   font-size: 4.5rem;
   margin-bottom: 1rem;
   line-height: 1.1;
-  background: linear-gradient(90deg, #fff, #aaa);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
-  color: var(--text-dark);
+  color: white;
   max-width: 700px;
   margin: 0 auto 2.5rem auto;
 }
@@ -269,32 +269,57 @@ a {
   line-height: 1.6;
 }
 
-/* Advantages Section */
-.advantages-grid {
+/* Advantages Section - Card Layout */
+.advantages-card-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
   margin-top: 4rem;
+  justify-content: center;
 }
 
-.advantages-column h3 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
+.advantage-card {
+  background-color: var(--background-light);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.advantage-item {
-  margin-bottom: 1.5rem;
+.advantage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.advantage-item h4 {
-  font-size: 1.2rem;
+.advantage-card h4 {
+  font-size: 1.3rem;
   color: var(--primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.advantage-item p {
+.advantage-card p {
   color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Create a 3-column layout for larger screens */
+@media (min-width: 992px) {
+  .advantages-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* Target the 4th card to start at the second column to center the last two cards */
+  .advantages-card-container .advantage-card:nth-child(5) {
+    grid-column-start: 2;
+  }
+}
+
+/* Create a 2-column layout for medium screens */
+@media (min-width: 768px) and (max-width: 991px) {
+  .advantages-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Features Section */
@@ -377,34 +402,104 @@ a {
 }
 
 /* FAQ Section */
+#faq .container {
+  max-width: 800px;
+}
+
+.faq-search {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.faq-search input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3.5rem;
+  background-color: var(--background-light);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.faq-search svg {
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+  color: var(--text-dark);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .faq-item {
   background-color: var(--background-light);
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  border: none; /* Remove default border */
+  position: relative; /* For pseudo-element positioning */
+  padding: 1px; /* Space for the pseudo-element border */
+  transition: background-color 0.3s ease;
+}
+
+.faq-item.active {
+  background-color: #2a2a4e; 
+}
+
+.faq-item.active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px; /* Match parent border-radius */
+  padding: 1px; /* Border thickness */
+  background: linear-gradient(90deg, var(--primary), var(--secondary)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1; /* Place behind content */
 }
 
 .faq-question {
   padding: 1.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--text-light);
+}
+
+.faq-icon {
+  color: var(--text-dark);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  color: var(--primary);
 }
 
 .faq-answer {
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 1.5rem;
   color: var(--text-dark);
   line-height: 1.7;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 300px; /* Adjust as needed */
+  max-height: 500px; /* Adjust as needed */
+  padding-bottom: 1.5rem;
+  transition: max-height 0.4s ease-in, padding 0.4s ease-in;
+}
+
+.faq-answer p {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
 }
 
 /* Footer */

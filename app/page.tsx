@@ -18,7 +18,6 @@ interface FaqItemProps {
 }
 
 // FAQ Item Component
-// Terapkan tipe pada komponen
 const FaqItem: React.FC<FaqItemProps> = ({ faq, onToggle, isActive }) => {
   const { question, answer } = faq;
 
@@ -26,7 +25,19 @@ const FaqItem: React.FC<FaqItemProps> = ({ faq, onToggle, isActive }) => {
     <div className={`faq-item ${isActive ? 'active' : ''}`} onClick={onToggle}>
       <div className="faq-question">
         {question}
-        <span>{isActive ? '-' : '+'}</span>
+        <div className="faq-icon">
+          {isActive ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          )}
+        </div>
       </div>
       <div className="faq-answer">
         <p>{answer}</p>
@@ -37,32 +48,44 @@ const FaqItem: React.FC<FaqItemProps> = ({ faq, onToggle, isActive }) => {
 
 // Main Page Component
 export default function Home() {
-  // Perbaiki tipe useState dari null menjadi number atau null
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-
-  // Perbaiki tipe parameter index dari any menjadi number
-  const toggleFaq = (index: number) => {
-    setActiveFaq(activeFaq === index ? null : index);
-  };
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredFaqs, setFilteredFaqs] = useState<FaqData[]>([]);
 
   const faqs: FaqData[] = [
     {
-      question: 'Apa yang terjadi jika saya gagal bayar?',
-      answer: 'Jika pinjaman tidak dapat dilunasi pada tanggal jatuh tempo, smart contract escrow akan secara otomatis mentransfer kepemilikan NFT Anda ke lender. Ini adalah proses akhir. Lender kemudian akan memiliki hak atas persentase pendapatan royalti dari lagu tersebut.',
+      question: 'How do I get started?',
+      answer: 'When you sign up, you’ll start with the Free plan. It’s ideal for new teams and allows unlimited team members, but only 1 active editable project at a time. For more advanced features, check out our Basic, Premium, or Enterprise plans.',
     },
     {
-      question: 'Bagaimana MuDING memastikan pendapatan royalti benar-benar dibagikan?',
-      answer: 'Melalui perjanjian hukum yang mengikat di awal, 100% pendapatan dari distributor dialihkan ke kami. Kami kemudian menggunakan smart contract untuk membagikannya secara otomatis. Artis tidak pernah memegang 100% pendapatan di awal, sehingga menghilangkan risiko penipuan.',
+      question: 'What is included in the Free Plan?',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
     },
     {
-      question: 'Apakah saya harus mentokenisasi 100% lagu saya?',
-      answer: 'Tidak. Anda memiliki fleksibilitas penuh. Anda bisa memutuskan untuk mentokenisasi hanya 10%, 25%, atau persentase lain dari pendapatan lagu Anda, sesuai dengan kebutuhan pendanaan Anda.',
+      question: 'How do I cancel my membership?',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
     },
     {
-      question: 'Apakah ini aman?',
-      answer: 'Keamanan kami berlapis. Kami menggunakan perjanjian hukum di dunia nyata untuk mengamankan aliran pendapatan, dan smart contract yang telah diaudit secara profesional di blockchain untuk mengotomatisasi pinjaman dan distribusi, menghilangkan risiko kesalahan manusia atau manipulasi.',
+      question: 'How do I transfer my membership to a different account?',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
+    },
+    {
+        question: 'What is the refund policy?',
+        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.',
     },
   ];
+
+  useEffect(() => {
+    const lowercasedFilter = searchTerm.toLowerCase();
+    const filteredData = faqs.filter(faq =>
+      faq.question.toLowerCase().includes(lowercasedFilter)
+    );
+    setFilteredFaqs(filteredData);
+  }, [searchTerm]);
+
+  const toggleFaq = (index: number) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
 
   return (
     <>
@@ -141,36 +164,26 @@ export default function Home() {
         <section id="advantages" className="section">
           <div className="container">
             <h2 className="section-title">Mengapa Memilih MuDING?</h2>
-            <div className="advantages-grid">
-              <div className="advantages-column">
-                <h3>Bagi Musisi & Pemegang Hak</h3>
-                <div className="advantage-item">
-                  <h4>Likuiditas Tanpa Menjual</h4>
-                  <p>Dapatkan dana tunai yang Anda butuhkan tanpa harus menjual aset master rights Anda selamanya.</p>
-                </div>
-                <div className="advantage-item">
-                  <h4>Pertahankan Kontrol</h4>
-                  <p>Anda tetap memegang kendali kreatif penuh. Kami hanya memfasilitasi pinjaman.</p>
-                </div>
-                <div className="advantage-item">
-                  <h4>Akses Global & Cepat</h4>
-                  <p>Dapatkan pendanaan dari jaringan global dengan proses berbasis smart contract yang cepat.</p>
-                </div>
+            <div className="advantages-card-container">
+              <div className="advantage-card">
+                <h4>Likuiditas Tanpa Menjual</h4>
+                <p>Dapatkan dana tunai yang Anda butuhkan tanpa harus menjual aset master rights Anda selamanya.</p>
               </div>
-              <div className="advantages-column">
-                <h3>Bagi Pemberi Pinjaman (Lender)</h3>
-                <div className="advantage-item">
-                  <h4>Kelas Aset Baru</h4>
-                  <p>Akses ke royalti musik yang tidak berkorelasi dengan pasar finansial tradisional.</p>
-                </div>
-                <div className="advantage-item">
-                  <h4>Jaminan Terverifikasi</h4>
-                  <p>Setiap pinjaman dijamin oleh aset yang telah melalui uji tuntas ketat dengan data transparan.</p>
-                </div>
-                <div className="advantage-item">
-                  <h4>Pendapatan Pasif yang Aman</h4>
-                  <p>Dapatkan bunga kompetitif, dan jika terjadi gagal bayar, Anda menerima aset (NFT) yang menghasilkan pendapatan.</p>
-                </div>
+              <div className="advantage-card">
+                <h4>Pertahankan Kontrol</h4>
+                <p>Anda tetap memegang kendali kreatif penuh. Kami hanya memfasilitasi pinjaman.</p>
+              </div>
+              <div className="advantage-card">
+                <h4>Akses Global & Cepat</h4>
+                <p>Dapatkan pendanaan dari jaringan global dengan proses berbasis smart contract yang cepat.</p>
+              </div>
+              <div className="advantage-card">
+                <h4>Jaminan Terverifikasi</h4>
+                <p>Setiap pinjaman dijamin oleh aset yang telah melalui uji tuntas ketat dengan data transparan.</p>
+              </div>
+              <div className="advantage-card">
+                <h4>Pendapatan Pasif yang Aman</h4>
+                <p>Dapatkan bunga kompetitif, dan jika terjadi gagal bayar, Anda menerima aset (NFT) yang menghasilkan pendapatan.</p>
               </div>
             </div>
           </div>
@@ -250,31 +263,24 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Secondary CTA Section */}
-        <section className="section">
-          <div className="container">
-            <div className="secondary-cta-grid">
-              <div className="secondary-cta-column">
-                <h3>Untuk Musisi</h3>
-                <p>Karya Anda memiliki nilai. Jangan biarkan terkunci. Mulailah proses verifikasi aset Anda hari ini.</p>
-                <a href="#" className="btn btn-primary">Pelajari Kriteria Verifikasi</a>
-              </div>
-              <div className="secondary-cta-column">
-                <h3>Untuk Pemberi Pinjaman</h3>
-                <p>Jadilah bagian dari revolusi keuangan musik. Diversifikasikan portofolio Anda dengan aset yang didukung pendapatan riil.</p>
-                <a href="#" className="btn btn-secondary">Lihat Aset yang Tersedia</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* FAQ Section */}
         <section id="faq" className="section">
           <div className="container">
-            <h2 className="section-title">Pertanyaan Umum (FAQ)</h2>
-            <p className="section-subtitle">Beberapa pertanyaan yang sering diajukan tentang platform kami.</p>
+          <h2 className="section-title">Frequently Asked Questions</h2>
+            <div className="faq-search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input 
+                  type="text" 
+                  placeholder="Search for a question" 
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  value={searchTerm}
+                />
+            </div>
             <div className="faq-list">
-              {faqs.map((faq, index) => (
+              {filteredFaqs.map((faq, index) => (
                 <FaqItem
                   key={index}
                   faq={faq}
