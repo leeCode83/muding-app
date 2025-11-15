@@ -1,9 +1,25 @@
+// leecode83/muding-app/muding-app-8bdb71faa93d7ef183e94ff2a6032079e1ff3155/app/page.tsx
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
 
+// Definisikan interface untuk FAQ object
+interface FaqData {
+  question: string;
+  answer: string;
+}
+
+// Definisikan interface untuk FaqItem Props
+interface FaqItemProps {
+  faq: FaqData;
+  onToggle: () => void;
+  isActive: boolean;
+}
+
 // FAQ Item Component
-const FaqItem = ({ faq, onToggle, isActive }) => {
+// Terapkan tipe pada komponen
+const FaqItem: React.FC<FaqItemProps> = ({ faq, onToggle, isActive }) => {
   const { question, answer } = faq;
 
   return (
@@ -21,13 +37,15 @@ const FaqItem = ({ faq, onToggle, isActive }) => {
 
 // Main Page Component
 export default function Home() {
-  const [activeFaq, setActiveFaq] = useState(null);
+  // Perbaiki tipe useState dari null menjadi number atau null
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  const toggleFaq = (index: any) => {
+  // Perbaiki tipe parameter index dari any menjadi number
+  const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
-  const faqs = [
+  const faqs: FaqData[] = [
     {
       question: 'Apa yang terjadi jika saya gagal bayar?',
       answer: 'Jika pinjaman tidak dapat dilunasi pada tanggal jatuh tempo, smart contract escrow akan secara otomatis mentransfer kepemilikan NFT Anda ke lender. Ini adalah proses akhir. Lender kemudian akan memiliki hak atas persentase pendapatan royalti dari lagu tersebut.',
